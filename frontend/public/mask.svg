@@ -1,0 +1,17 @@
+<!-- <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">  
+  <circle cx="50" cy="50" r="50"/>
+</svg> -->
+
+<svg width="500" height="250" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <clipPath id="circleView">
+            <circle cx="250" cy="125" r="125" fill="#FFFFFF" />
+        </clipPath>
+    </defs>
+    <image 
+      width="500" 
+      height="250" 
+      xlink:href="https://www.amrita.edu/sites/default/files/news-images/new/news-events/images/l-nov/grass.jpg" 
+      clip-path="url(#circleView)"
+    />
+ </svg>
