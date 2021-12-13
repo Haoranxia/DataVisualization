@@ -113,10 +113,19 @@ function ForceGraph({
         .transition()
           .attr("style", "opacity: 100%;");
     })
-    .on('mouseout', function() {
-      d3.select(this)
+    .on('mouseout', function(e, d) {
+      if (d.id !== selectedArtist) {
+        d3.select(this)
         .transition()
           .attr("style", "opacity: 0%;");
+      } 
+    })
+    .on('click', function(e, d) {
+      node
+        .select("image")
+        .filter((d) => d.id === selectedArtist)
+        .attr("style", "opacity: 0%;");
+      selectedArtist = d.id;
     });
 
   if (W) link.attr("stroke-width", ({index: i}) => W[i]);
@@ -208,32 +217,13 @@ var data = {
   
 };
 
+var selectedArtist = null;
+
 var chart = ForceGraph(data, {
     nodeId: d => d.id,
     nodeGroup: d => d.group,
     nodeTitle: d => `${d.id}\n${d.group}`,
     linkStrokeWidth: l => Math.sqrt(l.value)
 });
-
-var imgNode = d3.create("svg")
-  .style("height", "5em")
-  .style("width", "5em")
-  .style("background-image", "url('public/jobim.png')")
-  .style("background-size", "cover")
-  .style("mask-image", "url('public/mask.svg')")
-
-// var mask = d3.create("svg")
-//   .append("circle")
-//   .attr("cx", "50")
-//   .attr("cy", "50")
-//   .attr("r", "50")
-
-d3.select("#picture-test")
-  .append("svg")
-  .style("height", "5em")
-  .style("width", "5em")
-  .style("background-image", "url('public/jobim.png')")
-  .style("background-size", "cover")
-  .style("mask-image", "url('public/mask.svg')");
 
 d3.select("#force").node().appendChild(chart);
