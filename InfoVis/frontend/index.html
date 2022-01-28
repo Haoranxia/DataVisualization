@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="radar-chart.css">
+        <link rel="icon" href="favicon.ico">
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <title>Spotify Data Visualization</title>
+    </head>
+    <body>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1DB954">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Spotify Data Visualization</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </nav>
+
+        
+      <section class="bg-dark text-light p-5 text-center">
+        <div class="container">
+          <div class="row" id="firstRow">
+            <div class="col-8">
+              <h3 style="text-align: left;">Select an artist</h3>
+              <p style="text-align: left;">Each node represents an artists present within the playlist. Click on a node to select the artist, highlight all related genres in the <a href="#genreTableTitle">genre table</a>, and songs in the <a href="#songTableTitle">song table</a>. Hover over a node to see the artist and associated genres.</p>
+              <p style="text-align: left;"><small>Scroll or double-click to zoom the graph, drag a blank area to pan it.</small></p>
+            </div>
+            <div class="col-sm">
+              <div class="dropdown" style="text-align: right;">
+                <button style="background-color:#1DB954; border-color: #1DB954;" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-toggle="dropdown" aria-expanded="false">
+                  Select Playlist
+                </button>
+                <ul class="dropdown-menu" id="playlists" aria-labelledby="dropdownMenuButton1">
+                </ul>
+              </div>
+              <div style="margin-top: 0.25rem; text-align: right;">
+                <a href="#" data-toggle="tooltip" data-placement="bottom" toggle="click hover focus"
+                title="For the purpose of delivering a statically-viewable product, the Spotify data here is fixed (provided by our group members, Haoran and Sneha)."
+                >
+                <small>Can I add my own?</small></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <!-- Force Graph -->
+              <div id="force" style="overflow: hidden;"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button id="resetGenre" style="background-color:#1DB954; border-color: #1DB954; margin-top: 1rem;" class="btn btn-success">
+                <small>Reset Selections</small>
+              </button>
+              <button id="resetZoom" class="btn btn-outline-light">
+                <small>Reset Zoom</small>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <!-- Genre Table -->
+              <div class="secondRowTitle"><h4 id="genreTableTitle">Genre Table</h4></div>
+              <div id="genretable" class="musictables">
+              </div>
+            </div>
+            <div class="col">
+              <!-- Song Table -->
+              <h4 id="songTableTitle" class="secondRowTitle">Song Table</h4>
+              <div id="songtable" class="musictables">
+              </div>
+            </div>
+            <div class="col">
+              <div class="infocard">
+                <!-- Radar Chart -->
+                <h4 class="secondRowTitle">Single Song Stats</h4>
+                <div class="inforcard-header"></div>
+                <div class="infocard-body"> 
+                  <div id="songname1">song1</div>
+                  <div id="songname2">song2</div>
+                  <div id="radarChart"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <script src="http://code.jquery.com/jquery.min.js"></script>
+      <script src="index.js" type="module"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

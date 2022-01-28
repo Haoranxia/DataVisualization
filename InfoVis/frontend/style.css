@@ -1,0 +1,78 @@
+.musictables {
+  height: 700px;
+  overflow: auto;
+  font-family: monospace;
+  scrollbar-color: #75777a #212529;
+
+  border-radius: 0.1rem;
+  border-color: #808080;
+  border-style: solid;
+  border-width: 0.1rem;
+}
+
+.musictables thead th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: gray;
+	font-size: 14px;
+	/* border-left: 1px solid #ddd; */
+	/* border-right: 1px solid #ddd; */
+}
+
+.musictables tbody td {
+  text-align: left;
+  /* border-left: 1px solid #ddd; */
+	/* border-right: 1px solid #ddd; */
+	padding: 5px 5px 5px 5px;
+	font-size: 12px;
+	vertical-align: top;
+  /* border-bottom: 0.5px solid lightgray; */
+}
+
+.musictables tbody tr:nth-child(even) {
+  background-color: #2b3136;
+}
+
+.musictables tbody tr:nth-child(odd) {
+  background-color: revert;
+}
+
+.musictables table {
+  width: 100%;
+}
+
+.clickable-row:hover,.clickable-row.highlight  {
+  background: rgb(224, 224, 224);
+  cursor: pointer;
+}
+
+#firstRow {
+  margin-bottom: 0.5rem;
+}
+
+#force {
+  border-radius: 0.1rem;
+  border-color: #808080;
+  border-style: solid;
+  border-width: 0.1rem;
+}
+
+.secondRowTitle {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#songname1 {
+  color: yellow;
+}
+
+#songname2 {
+  color: red;
+}
+
+#resetZoom {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
